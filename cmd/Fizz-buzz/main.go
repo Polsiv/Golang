@@ -8,10 +8,12 @@ import (
 )
 
 func removeIndex(arr []int, index int) []int {
+	//Removes the 100 from the slice.
 	return append(arr[:index], arr[index+1:]...)
 }
 
 func scanData(filename string) []int {
+	//Reads the input.txt and stores the content into a slice.
 	file, ferr := os.Open(filename)
 	var numbers []int
 
@@ -33,7 +35,7 @@ func scanData(filename string) []int {
 }
 
 func checkNumbers(number int) string {
-
+	//returns fizz, buzz, fizzbuzz, or the number it self, depending on the number.
 	var toComplete string
 
 	if number%3 == 0 {
@@ -49,12 +51,15 @@ func checkNumbers(number int) string {
 }
 
 func printResult(numList []int) {
+	//prints the number and the return of checkNumbers.
 	for i := range numList {
 		fmt.Printf("%v %v\n", numList[i], checkNumbers(numList[i]))
 	}
 }
 
 func main() {
+
+	//calls the essential functions.
 	var numList []int = scanData("input.txt")
 	var modNumList []int = removeIndex(numList, 0)
 	printResult(modNumList)
