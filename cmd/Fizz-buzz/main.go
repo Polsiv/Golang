@@ -58,8 +58,7 @@ func printResult(numList []int) {
 }
 
 func main() {
-
-	//calls the essential functions.
+	//calls out the essential functions.
 	var numList []int = scanData("input.txt")
 	var modNumList []int = removeIndex(numList, 0)
 	printResult(modNumList)
